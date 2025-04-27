@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重庆陈徐摩托车（进出口贸易）有限公司</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 15px;
+        }
+
+        /* 标题样式 */
+        .responsive-title {
+            text-align: center;
+            margin: 30px 0 40px;
+            padding: 0 10px;
+        }
+
+        .main-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #1a237e;
+            line-height: 1.3;
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #3949ab, transparent);
+        }
+
+        .trade-info {
+            display: inline-block;
+            font-size: 0.6em;
+            vertical-align: bottom;
+            margin-left: 0.5em;
+            color: #666;
+        }
+
+        .sub-title {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: #666;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .slogan {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            color: #888;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                display: block;
+                color: red; /* 设置字体颜色为红色 */
+                font-weight: bold; /* 可选，设置字体加粗 */
+                width: 100%;
+                line-height: 1.4;
+                padding: 0;
+            }
+            .trade-info {
+                display: block;
+                width: 100%;
+                text-align: right;
+                font-size: 0.45em;
+                margin: 5px 0 0;
+                padding-right: 10px;
+                color: #777;
+            }
+        }
+
+        /* 导航卡片 */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            flex: 1 1 400px;
+            max-width: 480px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .category-card h2 {
+            font-size: 1.5rem;
+            color: #1a237e;
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .category-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: #3949ab;
+        }
+
+        .links-list {
+            list-style: none;
+        }
+
+        .links-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: #fff;
+            border-radius: 8px;
+            color: #1a237e;
+            text-decoration: none;
+            border: 1px solid #e8eaf6;
+            transition: all 0.3s ease;
+        }
+
+        .links-list a:hover {
+            background: #3949ab;
+            color: white;
+        }
+
+        /* 二维码区域 */
+        .qr-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .qr-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .qr-item {
+            flex: 0 1 200px;
+            cursor: pointer;
+        }
+
+        .qr-item img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .qr-item p {
+            margin-top: 12px;
+            color: #666;
+        }
+
+        /* 联系方式 */
+        .contact-info {
+            text-align: center;
+            padding: 25px;
+            margin: 40px 0;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .contact-info h2 {
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 12px 0;
+        }
+
+        /* 图片放大层 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .enlarged-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 标题 -->
+        <div class="responsive-title">
+            <div class="main-title">
+                重庆陈徐摩托车
+                <span class="trade-info">- 进出口贸易 有限公司</span>
+                <div class="sub-title">ChenXu官方网站分流平台</div>
+            </div>
+            <p class="slogan">专业级全球网络接入服务</p>
+        </div>
+
+        <!-- 服务器列表 -->
+        <div class="nav-container">
+            <div class="category-card">
+                <h2>境外通道</h2>
+                <ul class="links-list">
+                    <li>
+                        <a href="http://47.86.101.111" target="_blank">
+                            <span>EG 全球服务器（推荐）</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h2>境内通道</h2>
+                <ul class="links-list">
+                    <li>
+                        <a href="https://moto.vvtop.top:30301/" target="_blank">
+                            <span>CN 国内服务器（推荐）</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 二维码 -->
+        <section class="qr-section">
+            <h2>扫码联系</h2>
+            <div class="qr-container">
+                <div class="qr-item" onclick="showImage('img/wechat1.jpg')">
+                    <img src="img/wechat1.jpg" alt="徐总微信">
+                    <p>徐总微信</p>
+                </div>
+                <div class="qr-item" onclick="showImage('img/wechat.jpg')">
+                    <img src="img/wechat.jpg" alt="陈总微信">
+                    <p>陈总微信</p>
+                </div>
+                <div class="qr-item">
+                    <img src="img/tg.jpg" alt="Telegram" onclick="showImage('img/tg.jpg')">
+                    <p><a href="https://t.me/xcmsccl" target="_blank">Telegram联系</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <div class="contact-info">
+            <h2>24小时服务支持</h2>
+            <p>📞 服务热线：<a href="tel:13883188099">138-8318-8099</a></p>
+            <p>📞 技术专线：<a href="tel:13140222240">131-4022-2240</a></p>
+            <p>📧 服务邮箱：<a href="mailto:1366782839@qq.com">1366782839@qq.com</a></p>
+            <p>🏢 运营中心：重庆市科学城东路128号整栋</p>
+        </div>
+
+        <!-- 图片放大层 -->
+        <div class="overlay" onclick="closeImage()">
+            <img class="enlarged-img" src="" alt="放大二维码">
+        </div>
+    </div>
+
+    <script>
+        // 图片查看功能
+        function showImage(src) {
+            const overlay = document.querySelector('.overlay');
+            const img = overlay.querySelector('img');
+            img.src = src;
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImage() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
